@@ -2,12 +2,12 @@ import json
 
 import pytest
 
-from hello_world import app
+from src.hello_world import app
 
 
 @pytest.fixture()
 def apigw_event():
-    """ Generates API GW Event"""
+    """Generates API GW Event"""
 
     return {
         "body": '{ "test": "body"}',
@@ -63,7 +63,6 @@ def apigw_event():
 
 
 def test_lambda_handler(apigw_event):
-
     ret = app.lambda_handler(apigw_event, "")
     data = json.loads(ret["body"])
 

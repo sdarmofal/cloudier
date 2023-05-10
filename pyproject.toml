@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cloudier"
+version = "0.1.0"
+description = ""
+authors = ["Szymon Darmofał <darmofal.szymon@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pre-commit = "^3.3.1"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
