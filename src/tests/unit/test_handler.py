@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from src.hello_world import app
+from src.gateway import app
 
 
 @pytest.fixture()
@@ -64,8 +64,6 @@ def apigw_event():
 
 def test_lambda_handler(apigw_event):
     ret = app.lambda_handler(apigw_event, "")
-    data = json.loads(ret["body"])
+    json.loads(ret["body"])
 
-    assert ret["statusCode"] == 200
-    assert "message" in ret["body"]
-    assert data["message"] == "hello world"
+    assert ret["statusCode"] == 202

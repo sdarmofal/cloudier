@@ -11,20 +11,29 @@ Globals:
     Timeout: 3
 
 Resources:
-  HelloWorldFunction:
+  GatewayFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: hello_world/
+      CodeUri: gateway/
       Handler: app.lambda_handler
       Runtime: python3.10
       Architectures:
-      - x86_64
+        - x86_64
+      Environment:
+        Variables:
+          QUEUE_URL: !GetAtt PricingQueue.QueueUrl
       Events:
-        HelloWorld:
+        Gateway:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /hello
+            Path: /gateway
             Method: get
+  PricingQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: PricingQueue.fifo
+      FifoQueue: true
+      ContentBasedDeduplication: true
 
   ApplicationResourceGroup:
     Type: AWS::ResourceGroups::Group
@@ -43,12 +52,12 @@ Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldApi:
+  CloudierApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-  HelloWorldFunction:
-    Description: Hello World Lambda Function ARN
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: Implicit IAM Role created for Hello World function
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/gateway/"
+  GatewayFunction:
+    Description: Cloudier gateway
+    Value: !GetAtt GatewayFunction.Arn
+  GatewayFunctionIamRole:
+    Description: Implicit IAM Role created for Gateway function
+    Value: !GetAtt GatewayFunctionRole.Arn
