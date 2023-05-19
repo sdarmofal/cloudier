@@ -11,14 +11,46 @@ Globals:
     Timeout: 3
 
 Resources:
+  CloudierApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: CloudierApi
+      Description: Cloudier API
+      StageName: prod
+      Models:
+        GatewayRequestModel:
+          $schema: "http://json-schema.org/draft-04/schema#"
+          type: object
+          properties:
+            weight:
+              type: number
+              minimum: 1
+              maximum: 1000
+            length:
+              type: number
+              minimum: 1
+              maximum: 500
+            height:
+              type: number
+              minimum: 1
+              maximum: 500
+            width:
+              type: number
+              minimum: 1
+              maximum: 500
+          required:
+            - weight
+            - length
+            - width
+            - height
+
+
   GatewayFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: gateway/
       Handler: app.lambda_handler
       Runtime: python3.10
-      Architectures:
-        - x86_64
       Environment:
         Variables:
           QUEUE_URL: !GetAtt PricingQueue.QueueUrl
@@ -26,8 +58,13 @@ Resources:
         Gateway:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
+            RestApiId: !Ref CloudierApi
             Path: /gateway
-            Method: get
+            Method: post
+            RequestModel:
+              Model: GatewayRequestModel
+              Required: true
+              ValidateBody: true
   PricingQueue:
     Type: AWS::SQS::Queue
     Properties:
@@ -54,7 +91,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   CloudierApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/gateway/"
+    Value: !Sub "https://${CloudierApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/gateway/"
   GatewayFunction:
     Description: Cloudier gateway
     Value: !GetAtt GatewayFunction.Arn
