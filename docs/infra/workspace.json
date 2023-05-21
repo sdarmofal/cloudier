@@ -3,10 +3,10 @@
   "name" : "Name",
   "description" : "Description",
   "revision" : 0,
-  "lastModifiedDate" : "2023-05-13T13:04:40Z",
+  "lastModifiedDate" : "2023-05-21T09:30:35Z",
   "lastModifiedAgent" : "structurizr-web/2914/diagram",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIKICAgICAgICBjbG91ZGllciA9IHNvZnR3YXJlU3lzdGVtICJDbG91ZGllciIgewogICAgICAgICAgICBzcXMgPSBjb250YWluZXIgIlNRUyIgIiIgIiIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgUXVldWUgU2VydmljZQkiCiAgICAgICAgICAgIHNucyA9IGNvbnRhaW5lciAiU05TIiAiIiAiIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFNpbXBsZSBOb3RpZmljYXRpb24gU2VydmljZQkiCgogICAgICAgICAgICBnYXRld2F5ID0gY29udGFpbmVyICJHYXRld2F5IiAiIiAiIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEFXUyBMYW1iZGEgTGFtYmRhIEZ1bmN0aW9uIiB7CiAgICAgICAgICAgICAgICAtPiB1c2VyICJTZW5kIHNoaXBtZW50IGRhdGEiCiAgICAgICAgICAgICAgICAtPiBzcXMgIlF1ZXVlIHNoaXBtZW50IGZvciBmdXJ0aGVyIG9wZXJhdGlvbnMiCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHVzZXIgLT4gY2xvdWRpZXIgIlVzZXMiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgY2xvdWRpZXIgIlN5c3RlbUNvbnRleHQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBjbG91ZGllciAiQ2xvdWRpZXIiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIHRoZW1lIGh0dHBzOi8vc3RhdGljLnN0cnVjdHVyaXpyLmNvbS90aGVtZXMvYW1hem9uLXdlYi1zZXJ2aWNlcy0yMDIzLjAxLjMxL3RoZW1lLmpzb24KICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlIFBlcnNvbgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKCgp9Cg=="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIKICAgICAgICBjbG91ZGllciA9IHNvZnR3YXJlU3lzdGVtICJDbG91ZGllciIgewogICAgICAgICAgICBzcXMgPSBjb250YWluZXIgIlNRUyIgIiIgIiIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgUXVldWUgU2VydmljZQkiCiAgICAgICAgICAgIHNucyA9IGNvbnRhaW5lciAiU05TIiAiIiAiIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFNpbXBsZSBOb3RpZmljYXRpb24gU2VydmljZSIKICAgICAgICAgICAgc25zRW1haWwgPSBjb250YWluZXIgIlNOUyBFbWFpbCIgIiIgIiIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgTm90aWZpY2F0aW9uIFNlcnZpY2UgRW1haWwgTm90aWZpY2F0aW9uIgoKICAgICAgICAgICAgZ2F0ZXdheSA9IGNvbnRhaW5lciAiR2F0ZXdheSIgIiIgIiIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBV1MgTGFtYmRhIExhbWJkYSBGdW5jdGlvbiIgewogICAgICAgICAgICAgICAgLT4gdXNlciAiU2VuZCBzaGlwbWVudCBkYXRhIgogICAgICAgICAgICAgICAgLT4gc3FzICJRdWV1ZSBzaGlwbWVudCBmb3IgZnVydGhlciBvcGVyYXRpb25zIgogICAgICAgICAgICB9CgogICAgICAgICAgICB2YWxpZGF0b3IgPSBjb250YWluZXIgIlZhbGlkYXRvciIgIiIgIiIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBV1MgTGFtYmRhIExhbWJkYSBGdW5jdGlvbiIgewogICAgICAgICAgICAgICAgLT4gc3FzICJHZXQgc2hpcG1lbnQgZGF0YSBmcm9tIHF1ZXVlIgogICAgICAgICAgICAgICAgLT4gc25zRW1haWwgIk5vdGlmeSBhYm91dCBpbnZhbGlkIHNoaXBtZW50IgogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICB1c2VyIC0+IGNsb3VkaWVyICJVc2VzIgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGNsb3VkaWVyICJTeXN0ZW1Db250ZXh0IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgY2xvdWRpZXIgIkNsb3VkaWVyIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQoKICAgICAgICB0aGVtZSBodHRwczovL3N0YXRpYy5zdHJ1Y3R1cml6ci5jb20vdGhlbWVzL2FtYXpvbi13ZWItc2VydmljZXMtMjAyMy4wMS4zMS90aGVtZS5qc29uCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBQZXJzb24KICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCgoKfQo="
   },
   "configuration" : { },
   "model" : {
@@ -15,7 +15,7 @@
       "tags" : "Element,Person",
       "name" : "User",
       "relationships" : [ {
-        "id" : "9",
+        "id" : "13",
         "tags" : "Relationship",
         "sourceId" : "1",
         "destinationId" : "2",
@@ -28,40 +28,63 @@
       "tags" : "Element,Software System",
       "name" : "Cloudier",
       "relationships" : [ {
-        "id" : "7",
+        "id" : "8",
         "sourceId" : "2",
         "destinationId" : "1",
         "description" : "Send shipment data",
-        "linkedRelationshipId" : "6"
+        "linkedRelationshipId" : "7"
       } ],
       "location" : "Unspecified",
       "containers" : [ {
-        "id" : "5",
+        "id" : "6",
         "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
         "name" : "Gateway",
         "relationships" : [ {
-          "id" : "6",
+          "id" : "7",
           "tags" : "Relationship",
-          "sourceId" : "5",
+          "sourceId" : "6",
           "destinationId" : "1",
           "description" : "Send shipment data"
         }, {
-          "id" : "8",
+          "id" : "9",
           "tags" : "Relationship",
-          "sourceId" : "5",
+          "sourceId" : "6",
           "destinationId" : "3",
           "description" : "Queue shipment for further operations"
+        } ],
+        "documentation" : { }
+      }, {
+        "id" : "5",
+        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service Email Notification",
+        "name" : "SNS Email",
+        "documentation" : { }
+      }, {
+        "id" : "4",
+        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service",
+        "name" : "SNS",
+        "documentation" : { }
+      }, {
+        "id" : "10",
+        "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
+        "name" : "Validator",
+        "relationships" : [ {
+          "id" : "12",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "5",
+          "description" : "Notify about invalid shipment"
+        }, {
+          "id" : "11",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "3",
+          "description" : "Get shipment data from queue"
         } ],
         "documentation" : { }
       }, {
         "id" : "3",
         "tags" : "Element,Container,Amazon Web Services - Simple Queue Service",
         "name" : "SQS",
-        "documentation" : { }
-      }, {
-        "id" : "4",
-        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service",
-        "name" : "SNS",
         "documentation" : { }
       } ],
       "documentation" : { }
@@ -97,18 +120,18 @@
         "y" : 908
       } ],
       "relationships" : [ {
-        "id" : "7"
+        "id" : "13"
       }, {
-        "id" : "9"
+        "id" : "8"
       } ]
     } ],
     "containerViews" : [ {
       "softwareSystemId" : "2",
       "key" : "Cloudier",
       "order" : 2,
-      "paperSize" : "A5_Landscape",
+      "paperSize" : "A4_Landscape",
       "dimensions" : {
-        "width" : 2362,
+        "width" : 3112,
         "height" : 1608
       },
       "automaticLayout" : {
@@ -122,29 +145,41 @@
       "externalSoftwareSystemBoundariesVisible" : true,
       "elements" : [ {
         "id" : "1",
-        "x" : 1695,
+        "x" : 2445,
         "y" : 892
       }, {
         "id" : "3",
-        "x" : 287,
+        "x" : 1037,
         "y" : 942
       }, {
         "id" : "4",
-        "x" : 1037,
+        "x" : 1787,
         "y" : 292
       }, {
         "id" : "5",
         "x" : 287,
+        "y" : 942
+      }, {
+        "id" : "6",
+        "x" : 1037,
+        "y" : 292
+      }, {
+        "id" : "10",
+        "x" : 287,
         "y" : 292
       } ],
       "relationships" : [ {
-        "id" : "6",
+        "id" : "11"
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "7",
         "vertices" : [ {
-          "x" : 887,
+          "x" : 1637,
           "y" : 592
         } ]
       }, {
-        "id" : "8"
+        "id" : "9"
       } ]
     } ],
     "configuration" : {

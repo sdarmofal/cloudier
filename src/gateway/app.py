@@ -8,13 +8,15 @@ sqs_client = boto3.client("sqs")
 
 def lambda_handler(event: dict, context: object) -> dict:
     queue_url = os.environ["QUEUE_URL"]
+    event_body = ujson.loads(event["body"])
 
     try:
         message = {
-            "weight": event["weight"],
-            "length": event["length"],
-            "width": event["width"],
-            "height": event["height"],
+            "source": context.aws_request_id,
+            "weight": event_body["weight"],
+            "length": event_body["length"],
+            "width": event_body["width"],
+            "height": event_body["height"],
         }
     except KeyError:
         return {"statusCode": 400, "body": "Invalid request"}

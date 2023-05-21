@@ -4,11 +4,16 @@ workspace {
         user = person "User"
         cloudier = softwareSystem "Cloudier" {
             sqs = container "SQS" "" "" "Amazon Web Services - Simple Queue Service	"
-            sns = container "SNS" "" "" "Amazon Web Services - Simple Notification Service"
+            snsEmail = container "SNS Email" "" "" "Amazon Web Services - Simple Notification Service Email Notification"
 
             gateway = container "Gateway" "" "" "Amazon Web Services - AWS Lambda Lambda Function" {
                 -> user "Send shipment data"
                 -> sqs "Queue shipment for further operations"
+            }
+
+            validator = container "Validator" "" "" "Amazon Web Services - AWS Lambda Lambda Function" {
+                -> sqs "Get shipment data from queue"
+                -> snsEmail "Notify about invalid shipment"
             }
         }
 

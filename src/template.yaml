@@ -16,7 +16,7 @@ Resources:
     Properties:
       Name: CloudierApi
       Description: Cloudier API
-      StageName: prod
+      StageName: Prod
       Models:
         GatewayRequestModel:
           $schema: "http://json-schema.org/draft-04/schema#"
@@ -53,7 +53,10 @@ Resources:
       Runtime: python3.10
       Environment:
         Variables:
-          QUEUE_URL: !GetAtt PricingQueue.QueueUrl
+          QUEUE_URL: !GetAtt ValidationQueue.QueueUrl
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt ValidationQueue.QueueName
       Events:
         Gateway:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -65,12 +68,42 @@ Resources:
               Model: GatewayRequestModel
               Required: true
               ValidateBody: true
-  PricingQueue:
+
+  ValidatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: validator/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          SNS_TOPIC_ARN: !Ref ShipmentEmailNotification
+      Policies:
+        - SQSPollerPolicy:
+            QueueName: !GetAtt ValidationQueue.QueueName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt ShipmentEmailNotification.TopicName
+      Events:
+        ValidatorSQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt ValidationQueue.Arn
+            BatchSize: 1
+
+  ValidationQueue:
     Type: AWS::SQS::Queue
     Properties:
-      QueueName: PricingQueue.fifo
+      QueueName: ValidationQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
+  ShipmentEmailNotification:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ShipmentEmailNotification
+      Subscription:
+        - Endpoint: '{{resolve:secretsmanager:ShimpentNotificationEmail:SecretString:ShipmentNotificationEmail}}'
+          Protocol: email
+
 
   ApplicationResourceGroup:
     Type: AWS::ResourceGroups::Group
