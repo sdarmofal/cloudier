@@ -3,10 +3,10 @@
   "name" : "Name",
   "description" : "Description",
   "revision" : 0,
-  "lastModifiedDate" : "2023-05-27T09:55:48Z",
+  "lastModifiedDate" : "2023-05-27T11:43:23Z",
   "lastModifiedAgent" : "structurizr-web/2914/diagram",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIKICAgICAgICBjbG91ZGllciA9IHNvZnR3YXJlU3lzdGVtICJDbG91ZGllciIgewogICAgICAgICAgICB2YWxpZGF0aW9uUXVldWUgPSBjb250YWluZXIgIlZhbGlkYXRpb24gUXVldWUiICIiICJTUVMiICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gU2ltcGxlIFF1ZXVlIFNlcnZpY2UJIgogICAgICAgICAgICBpbnZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gPSBjb250YWluZXIgIkludmFsaWRTaGlwbWVudE5vdGlmaWNhdGlvbiIgIiIgIlNOUyIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgTm90aWZpY2F0aW9uIFNlcnZpY2UgVG9waWMiCiAgICAgICAgICAgIHZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gPSBjb250YWluZXIgIlZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24iICIiICJTTlMiICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gU2ltcGxlIE5vdGlmaWNhdGlvbiBTZXJ2aWNlIFRvcGljIgogICAgICAgICAgICB2YWxpZFNoaXBtZW50c1F1ZXVlID0gY29udGFpbmVyICJWYWxpZFNoaXBtZW50c1F1ZXVlIiAiIiAiU1FTIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFNpbXBsZSBRdWV1ZSBTZXJ2aWNlIgoKICAgICAgICAgICAgZ2F0ZXdheSA9IGNvbnRhaW5lciAiR2F0ZXdheSIgIiIgIkxhbWJkYSIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBV1MgTGFtYmRhIExhbWJkYSBGdW5jdGlvbiIgewogICAgICAgICAgICAgICAgLT4gdXNlciAiU2VuZCBzaGlwbWVudCBkYXRhIgogICAgICAgICAgICAgICAgLT4gdmFsaWRhdGlvblF1ZXVlICJRdWV1ZSBzaGlwbWVudCBmb3IgZnVydGhlciBvcGVyYXRpb25zIgogICAgICAgICAgICB9CgogICAgICAgICAgICB2YWxpZGF0b3IgPSBjb250YWluZXIgIlZhbGlkYXRvciIgIiIgIkxhbWJkYSIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBV1MgTGFtYmRhIExhbWJkYSBGdW5jdGlvbiIgewogICAgICAgICAgICAgICAgbGFtYmRhSGFuZGxlciA9IGNvbXBvbmVudCAiTGFtYmRhIGhhbmRsZXIiICIiICIiICIiCiAgICAgICAgICAgICAgICB2YWxpZGF0b3JDb21wb25lbnQgPSBjb21wb25lbnQgIlZhbGlkYXRvciIgIiIgIlB5dGhvbiIgIlB5dGhvbiIKICAgICAgICAgICAgICAgIGRobFZhbGlkYXRvckNvbXBvbmVudCA9IGNvbXBvbmVudCAiVmFsaWRhdGUgREhMIHNoaXBtZW50IiAiIiAiIiAiIgoKICAgICAgICAgICAgICAgIGxhbWJkYUhhbmRsZXIgLT4gdmFsaWRhdG9yQ29tcG9uZW50ICJWYWxpZGF0ZSBzaGlwbWVudCIKICAgICAgICAgICAgICAgIGxhbWJkYUhhbmRsZXIgLT4gdmFsaWRhdGlvblF1ZXVlICJHZXQgc2hpcG1lbnQgZGF0YSBmcm9tIHF1ZXVlIgogICAgICAgICAgICAgICAgbGFtYmRhSGFuZGxlciAtPiBpbnZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gIk5vdGlmeSBhYm91dCBpbnZhbGlkIHNoaXBtZW50IgogICAgICAgICAgICAgICAgbGFtYmRhSGFuZGxlciAtPiB2YWxpZFNoaXBtZW50Tm90aWZpY2F0aW9uICJOb3RpZnkgYWJvdXQgdmFsaWQgc2hpcG1lbnQiCiAgICAgICAgICAgICAgICB2YWxpZGF0b3JDb21wb25lbnQgLT4gZGhsVmFsaWRhdG9yQ29tcG9uZW50ICJWYWxpZGF0ZSBzaGlwbWVudCB1c2luZyBESEwgc3BlY2lmaWNhdGlvbiIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgdXNlciAtPiBjbG91ZGllciAiT3JkZXIgc2hpcG1lbnQiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgY2xvdWRpZXIgIlN5c3RlbUNvbnRleHQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBjbG91ZGllciAiQ2xvdWRpZXIiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCB2YWxpZGF0b3IgIlZhbGlkYXRvciIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KCiAgICAgICAgdGhlbWUgaHR0cHM6Ly9zdGF0aWMuc3RydWN0dXJpenIuY29tL3RoZW1lcy9hbWF6b24td2ViLXNlcnZpY2VzLTIwMjMuMDEuMzEvdGhlbWUuanNvbgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgoKCn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIKICAgICAgICBjbG91ZGllciA9IHNvZnR3YXJlU3lzdGVtICJDbG91ZGllciIgewogICAgICAgICAgICB2YWxpZGF0aW9uUXVldWUgPSBjb250YWluZXIgIlZhbGlkYXRpb24gUXVldWUiICIiICJTUVMiICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gU2ltcGxlIFF1ZXVlIFNlcnZpY2UJIgogICAgICAgICAgICBpbnZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gPSBjb250YWluZXIgIkludmFsaWRTaGlwbWVudE5vdGlmaWNhdGlvbiIgIiIgIlNOUyIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgTm90aWZpY2F0aW9uIFNlcnZpY2UgVG9waWMiCiAgICAgICAgICAgIHZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gPSBjb250YWluZXIgIlZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24iICIiICJTTlMiICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gU2ltcGxlIE5vdGlmaWNhdGlvbiBTZXJ2aWNlIFRvcGljIgogICAgICAgICAgICB2YWxpZFNoaXBtZW50c1F1ZXVlID0gY29udGFpbmVyICJWYWxpZFNoaXBtZW50c1F1ZXVlIiAiIiAiU1FTIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFNpbXBsZSBRdWV1ZSBTZXJ2aWNlIgogICAgICAgICAgICBlc3RpbWF0ZWRTaGlwbWVudHNRdWV1ZSA9IGNvbnRhaW5lciAiRXN0aW1hdGVkU2hpcG1lbnRzUXVldWUiICIiICJTUVMiICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gU2ltcGxlIFF1ZXVlIFNlcnZpY2UiCiAgICAgICAgICAgIGVzdGltYXRlZFNoaXBtZW50Tm90aWZpY2F0aW9uID0gY29udGFpbmVyICJFc3RpbWF0ZWRTaGlwbWVudE5vdGlmaWNhdGlvbiIgIiIgIlNOUyIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBTaW1wbGUgTm90aWZpY2F0aW9uIFNlcnZpY2UgVG9waWMiCgogICAgICAgICAgICBnYXRld2F5ID0gY29udGFpbmVyICJHYXRld2F5IiAiIiAiTGFtYmRhIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEFXUyBMYW1iZGEgTGFtYmRhIEZ1bmN0aW9uIiB7CiAgICAgICAgICAgICAgICAtPiB1c2VyICJTZW5kIHNoaXBtZW50IGRhdGEiCiAgICAgICAgICAgICAgICAtPiB2YWxpZGF0aW9uUXVldWUgIlF1ZXVlIHNoaXBtZW50IGZvciBmdXJ0aGVyIG9wZXJhdGlvbnMiCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIHZhbGlkYXRvciA9IGNvbnRhaW5lciAiVmFsaWRhdG9yIiAiIiAiTGFtYmRhIiAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEFXUyBMYW1iZGEgTGFtYmRhIEZ1bmN0aW9uIiB7CiAgICAgICAgICAgICAgICB2YWxpZGF0b3JMYW1iZGFIYW5kbGVyID0gY29tcG9uZW50ICJMYW1iZGEgaGFuZGxlciIgIiIgIiIgIiIKICAgICAgICAgICAgICAgIHZhbGlkYXRvckNvbXBvbmVudCA9IGNvbXBvbmVudCAiVmFsaWRhdG9yIiAiIiAiUHl0aG9uIiAiUHl0aG9uIgogICAgICAgICAgICAgICAgZGhsVmFsaWRhdG9yQ29tcG9uZW50ID0gY29tcG9uZW50ICJWYWxpZGF0ZSBESEwgc2hpcG1lbnQiICIiICIiICIiCgogICAgICAgICAgICAgICAgdmFsaWRhdG9yTGFtYmRhSGFuZGxlciAtPiB2YWxpZGF0b3JDb21wb25lbnQgIlZhbGlkYXRlIHNoaXBtZW50IgogICAgICAgICAgICAgICAgdmFsaWRhdG9yTGFtYmRhSGFuZGxlciAtPiB2YWxpZGF0aW9uUXVldWUgIkdldCBzaGlwbWVudCBkYXRhIGZyb20gcXVldWUiCiAgICAgICAgICAgICAgICB2YWxpZGF0b3JMYW1iZGFIYW5kbGVyIC0+IGludmFsaWRTaGlwbWVudE5vdGlmaWNhdGlvbiAiTm90aWZ5IGFib3V0IGludmFsaWQgc2hpcG1lbnQiCiAgICAgICAgICAgICAgICB2YWxpZGF0b3JMYW1iZGFIYW5kbGVyIC0+IHZhbGlkU2hpcG1lbnROb3RpZmljYXRpb24gIk5vdGlmeSBhYm91dCB2YWxpZCBzaGlwbWVudCIKICAgICAgICAgICAgICAgIHZhbGlkYXRvckNvbXBvbmVudCAtPiBkaGxWYWxpZGF0b3JDb21wb25lbnQgIlZhbGlkYXRlIHNoaXBtZW50IHVzaW5nIERITCBzcGVjaWZpY2F0aW9uIgogICAgICAgICAgICB9CgogICAgICAgICAgICBlc3RpbWF0b3IgPSBjb250YWluZXIgIkVzdGltYXRvciIgIiIgIkxhbWJkYSIgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBV1MgTGFtYmRhIExhbWJkYSBGdW5jdGlvbiIgewogICAgICAgICAgICAgICAgZXN0aW1hdG9yTGFtYmRhSGFuZGxlciA9IGNvbXBvbmVudCAiTGFtYmRhIGhhbmRsZXIiICIiICJQeXRob24iICIiCiAgICAgICAgICAgICAgICBlc3RpbWF0b3JDb21wb25lbnQgPSBjb21wb25lbnQgIkVzdGltYXRvciIgIiIgIlB5dGhvbiIgIiIKICAgICAgICAgICAgICAgIGRobEVzdGltYXRvckNvbXBvbmVudCA9IGNvbXBvbmVudCAiRXN0aW1hdGUgREhMIHNoaXBtZW50IiAiIiAiUHl0aG9uIiAiIgoKICAgICAgICAgICAgICAgIGVzdGltYXRvckxhbWJkYUhhbmRsZXIgLT4gdmFsaWRTaGlwbWVudHNRdWV1ZSAiR2V0IHNoaXBtZW50IGRhdGEgZnJvbSBxdWV1ZSIKICAgICAgICAgICAgICAgIGVzdGltYXRvckxhbWJkYUhhbmRsZXIgLT4gZXN0aW1hdG9yQ29tcG9uZW50ICJFc3RpbWF0ZSBzaGlwbWVudCIKICAgICAgICAgICAgICAgIGVzdGltYXRvckxhbWJkYUhhbmRsZXIgLT4gZXN0aW1hdGVkU2hpcG1lbnROb3RpZmljYXRpb24gIk5vdGlmeSBhYm91dCBlc3RpbWF0ZWQgc2hpcG1lbnQiCiAgICAgICAgICAgICAgICBlc3RpbWF0b3JMYW1iZGFIYW5kbGVyIC0+IGludmFsaWRTaGlwbWVudE5vdGlmaWNhdGlvbiAiTm90aWZ5IGFib3V0IGludmFsaWQgc2hpcG1lbnQiCiAgICAgICAgICAgICAgICBlc3RpbWF0b3JDb21wb25lbnQgLT4gZGhsRXN0aW1hdG9yQ29tcG9uZW50ICJFc3RpbWF0ZSBzaGlwbWVudCB1c2luZyBESEwgc3BlY2lmaWNhdGlvbiIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgdXNlciAtPiBjbG91ZGllciAiT3JkZXIgc2hpcG1lbnQiCiAgICAgICAgdmFsaWRTaGlwbWVudE5vdGlmaWNhdGlvbiAtPiB2YWxpZFNoaXBtZW50c1F1ZXVlICJRdWV1ZSB2YWxpZCBzaGlwbWVudCIKICAgICAgICBlc3RpbWF0ZWRTaGlwbWVudE5vdGlmaWNhdGlvbiAtPiBlc3RpbWF0ZWRTaGlwbWVudHNRdWV1ZSAiUXVldWUgZXN0aW1hdGVkIHNoaXBtZW50IgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGNsb3VkaWVyICJTeXN0ZW1Db250ZXh0IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgY2xvdWRpZXIgIkNsb3VkaWVyIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgdmFsaWRhdG9yICJWYWxpZGF0b3IiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBlc3RpbWF0b3IgIkVzdGltYXRvciIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KCiAgICAgICAgdGhlbWUgaHR0cHM6Ly9zdGF0aWMuc3RydWN0dXJpenIuY29tL3RoZW1lcy9hbWF6b24td2ViLXNlcnZpY2VzLTIwMjMuMDEuMzEvdGhlbWUuanNvbgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgoKCn0K"
   },
   "configuration" : { },
   "model" : {
@@ -15,7 +15,7 @@
       "tags" : "Element,Person",
       "name" : "User",
       "relationships" : [ {
-        "id" : "23",
+        "id" : "37",
         "tags" : "Relationship",
         "sourceId" : "1",
         "destinationId" : "2",
@@ -28,31 +28,44 @@
       "tags" : "Element,Software System",
       "name" : "Cloudier",
       "relationships" : [ {
-        "id" : "9",
+        "id" : "11",
         "sourceId" : "2",
         "destinationId" : "1",
         "description" : "Send shipment data",
-        "linkedRelationshipId" : "8"
+        "linkedRelationshipId" : "10"
       } ],
       "location" : "Unspecified",
       "containers" : [ {
-        "id" : "7",
+        "id" : "9",
         "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
         "name" : "Gateway",
         "relationships" : [ {
-          "id" : "8",
+          "id" : "10",
           "tags" : "Relationship",
-          "sourceId" : "7",
+          "sourceId" : "9",
           "destinationId" : "1",
           "description" : "Send shipment data"
         }, {
-          "id" : "10",
+          "id" : "12",
           "tags" : "Relationship",
-          "sourceId" : "7",
+          "sourceId" : "9",
           "destinationId" : "3",
           "description" : "Queue shipment for further operations"
         } ],
         "technology" : "Lambda",
+        "documentation" : { }
+      }, {
+        "id" : "5",
+        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service Topic",
+        "name" : "ValidShipmentNotification",
+        "relationships" : [ {
+          "id" : "38",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "6",
+          "description" : "Queue valid shipment"
+        } ],
+        "technology" : "SNS",
         "documentation" : { }
       }, {
         "id" : "3",
@@ -61,16 +74,160 @@
         "technology" : "SQS",
         "documentation" : { }
       }, {
-        "id" : "6",
+        "id" : "13",
+        "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
+        "name" : "Validator",
+        "relationships" : [ {
+          "id" : "21",
+          "sourceId" : "13",
+          "destinationId" : "4",
+          "description" : "Notify about invalid shipment",
+          "linkedRelationshipId" : "20"
+        }, {
+          "id" : "19",
+          "sourceId" : "13",
+          "destinationId" : "3",
+          "description" : "Get shipment data from queue",
+          "linkedRelationshipId" : "18"
+        }, {
+          "id" : "23",
+          "sourceId" : "13",
+          "destinationId" : "5",
+          "description" : "Notify about valid shipment",
+          "linkedRelationshipId" : "22"
+        } ],
+        "technology" : "Lambda",
+        "components" : [ {
+          "id" : "14",
+          "tags" : "Element,Component",
+          "name" : "Lambda handler",
+          "relationships" : [ {
+            "id" : "18",
+            "tags" : "Relationship",
+            "sourceId" : "14",
+            "destinationId" : "3",
+            "description" : "Get shipment data from queue"
+          }, {
+            "id" : "22",
+            "tags" : "Relationship",
+            "sourceId" : "14",
+            "destinationId" : "5",
+            "description" : "Notify about valid shipment"
+          }, {
+            "id" : "20",
+            "tags" : "Relationship",
+            "sourceId" : "14",
+            "destinationId" : "4",
+            "description" : "Notify about invalid shipment"
+          }, {
+            "id" : "17",
+            "tags" : "Relationship",
+            "sourceId" : "14",
+            "destinationId" : "15",
+            "description" : "Validate shipment"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "16",
+          "tags" : "Element,Component",
+          "name" : "Validate DHL shipment",
+          "size" : 0
+        }, {
+          "id" : "15",
+          "tags" : "Element,Component,Python",
+          "name" : "Validator",
+          "relationships" : [ {
+            "id" : "24",
+            "tags" : "Relationship",
+            "sourceId" : "15",
+            "destinationId" : "16",
+            "description" : "Validate shipment using DHL specification"
+          } ],
+          "technology" : "Python",
+          "size" : 0
+        } ],
+        "documentation" : { }
+      }, {
+        "id" : "7",
         "tags" : "Element,Container,Amazon Web Services - Simple Queue Service",
-        "name" : "ValidShipmentsQueue",
+        "name" : "EstimatedShipmentsQueue",
         "technology" : "SQS",
         "documentation" : { }
       }, {
-        "id" : "5",
-        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service Topic",
-        "name" : "ValidShipmentNotification",
-        "technology" : "SNS",
+        "id" : "25",
+        "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
+        "name" : "Estimator",
+        "relationships" : [ {
+          "id" : "30",
+          "sourceId" : "25",
+          "destinationId" : "6",
+          "description" : "Get shipment data from queue",
+          "linkedRelationshipId" : "29"
+        }, {
+          "id" : "33",
+          "sourceId" : "25",
+          "destinationId" : "8",
+          "description" : "Notify about estimated shipment",
+          "linkedRelationshipId" : "32"
+        }, {
+          "id" : "35",
+          "sourceId" : "25",
+          "destinationId" : "4",
+          "description" : "Notify about invalid shipment",
+          "linkedRelationshipId" : "34"
+        } ],
+        "technology" : "Lambda",
+        "components" : [ {
+          "id" : "26",
+          "tags" : "Element,Component",
+          "name" : "Lambda handler",
+          "relationships" : [ {
+            "id" : "31",
+            "tags" : "Relationship",
+            "sourceId" : "26",
+            "destinationId" : "27",
+            "description" : "Estimate shipment"
+          }, {
+            "id" : "34",
+            "tags" : "Relationship",
+            "sourceId" : "26",
+            "destinationId" : "4",
+            "description" : "Notify about invalid shipment"
+          }, {
+            "id" : "29",
+            "tags" : "Relationship",
+            "sourceId" : "26",
+            "destinationId" : "6",
+            "description" : "Get shipment data from queue"
+          }, {
+            "id" : "32",
+            "tags" : "Relationship",
+            "sourceId" : "26",
+            "destinationId" : "8",
+            "description" : "Notify about estimated shipment"
+          } ],
+          "technology" : "Python",
+          "size" : 0
+        }, {
+          "id" : "27",
+          "tags" : "Element,Component",
+          "name" : "Estimator",
+          "relationships" : [ {
+            "id" : "36",
+            "tags" : "Relationship",
+            "sourceId" : "27",
+            "destinationId" : "28",
+            "description" : "Estimate shipment using DHL specification"
+          } ],
+          "technology" : "Python",
+          "size" : 0
+        }, {
+          "id" : "28",
+          "tags" : "Element,Component",
+          "name" : "Estimate DHL shipment",
+          "technology" : "Python",
+          "size" : 0
+        } ],
         "documentation" : { }
       }, {
         "id" : "4",
@@ -79,78 +236,23 @@
         "technology" : "SNS",
         "documentation" : { }
       }, {
-        "id" : "11",
-        "tags" : "Element,Container,Amazon Web Services - AWS Lambda Lambda Function",
-        "name" : "Validator",
+        "id" : "6",
+        "tags" : "Element,Container,Amazon Web Services - Simple Queue Service",
+        "name" : "ValidShipmentsQueue",
+        "technology" : "SQS",
+        "documentation" : { }
+      }, {
+        "id" : "8",
+        "tags" : "Element,Container,Amazon Web Services - Simple Notification Service Topic",
+        "name" : "EstimatedShipmentNotification",
         "relationships" : [ {
-          "id" : "17",
-          "sourceId" : "11",
-          "destinationId" : "3",
-          "description" : "Get shipment data from queue",
-          "linkedRelationshipId" : "16"
-        }, {
-          "id" : "19",
-          "sourceId" : "11",
-          "destinationId" : "4",
-          "description" : "Notify about invalid shipment",
-          "linkedRelationshipId" : "18"
-        }, {
-          "id" : "21",
-          "sourceId" : "11",
-          "destinationId" : "5",
-          "description" : "Notify about valid shipment",
-          "linkedRelationshipId" : "20"
+          "id" : "39",
+          "tags" : "Relationship",
+          "sourceId" : "8",
+          "destinationId" : "7",
+          "description" : "Queue estimated shipment"
         } ],
-        "technology" : "Lambda",
-        "components" : [ {
-          "id" : "13",
-          "tags" : "Element,Component,Python",
-          "name" : "Validator",
-          "relationships" : [ {
-            "id" : "22",
-            "tags" : "Relationship",
-            "sourceId" : "13",
-            "destinationId" : "14",
-            "description" : "Validate shipment using DHL specification"
-          } ],
-          "technology" : "Python",
-          "size" : 0
-        }, {
-          "id" : "14",
-          "tags" : "Element,Component",
-          "name" : "Validate DHL shipment",
-          "size" : 0
-        }, {
-          "id" : "12",
-          "tags" : "Element,Component",
-          "name" : "Lambda handler",
-          "relationships" : [ {
-            "id" : "15",
-            "tags" : "Relationship",
-            "sourceId" : "12",
-            "destinationId" : "13",
-            "description" : "Validate shipment"
-          }, {
-            "id" : "20",
-            "tags" : "Relationship",
-            "sourceId" : "12",
-            "destinationId" : "5",
-            "description" : "Notify about valid shipment"
-          }, {
-            "id" : "16",
-            "tags" : "Relationship",
-            "sourceId" : "12",
-            "destinationId" : "3",
-            "description" : "Get shipment data from queue"
-          }, {
-            "id" : "18",
-            "tags" : "Relationship",
-            "sourceId" : "12",
-            "destinationId" : "4",
-            "description" : "Notify about invalid shipment"
-          } ],
-          "size" : 0
-        } ],
+        "technology" : "SNS",
         "documentation" : { }
       } ],
       "documentation" : { }
@@ -178,24 +280,24 @@
       "enterpriseBoundaryVisible" : true,
       "elements" : [ {
         "id" : "1",
-        "x" : 236,
-        "y" : 207
+        "x" : 233,
+        "y" : 208
       }, {
         "id" : "2",
-        "x" : 211,
-        "y" : 907
+        "x" : 208,
+        "y" : 908
       } ],
       "relationships" : [ {
-        "id" : "23",
+        "id" : "37",
         "vertices" : [ {
-          "x" : 286,
-          "y" : 732
+          "x" : 283,
+          "y" : 733
         } ]
       }, {
-        "id" : "9",
+        "id" : "11",
         "vertices" : [ {
-          "x" : 586,
-          "y" : 732
+          "x" : 583,
+          "y" : 733
         } ]
       } ]
     } ],
@@ -203,10 +305,10 @@
       "softwareSystemId" : "2",
       "key" : "Cloudier",
       "order" : 2,
-      "paperSize" : "A4_Landscape",
+      "paperSize" : "A3_Landscape",
       "dimensions" : {
-        "width" : 3204,
-        "height" : 1608
+        "width" : 4262,
+        "height" : 2258
       },
       "automaticLayout" : {
         "implementation" : "Graphviz",
@@ -218,46 +320,68 @@
       },
       "externalSoftwareSystemBoundariesVisible" : true,
       "elements" : [ {
-        "id" : "11",
-        "x" : 329,
-        "y" : 329
-      }, {
         "id" : "1",
-        "x" : 2579,
+        "x" : 3637,
         "y" : 929
       }, {
+        "id" : "13",
+        "x" : 2137,
+        "y" : 329
+      }, {
         "id" : "3",
-        "x" : 1829,
+        "x" : 2887,
         "y" : 979
       }, {
+        "id" : "25",
+        "x" : 858,
+        "y" : 329
+      }, {
         "id" : "4",
-        "x" : 1079,
+        "x" : 1387,
         "y" : 979
       }, {
         "id" : "5",
-        "x" : 329,
+        "x" : 2137,
         "y" : 979
       }, {
         "id" : "6",
-        "x" : 1079,
-        "y" : 329
+        "x" : 1608,
+        "y" : 1629
       }, {
         "id" : "7",
-        "x" : 1829,
+        "x" : 329,
+        "y" : 1629
+      }, {
+        "id" : "8",
+        "x" : 329,
+        "y" : 979
+      }, {
+        "id" : "9",
+        "x" : 2887,
         "y" : 329
       } ],
       "relationships" : [ {
-        "id" : "17",
-        "vertices" : [ {
-          "x" : 1679,
-          "y" : 929
-        } ]
+        "id" : "35"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "33"
       }, {
         "id" : "21"
       }, {
-        "id" : "8"
-      }, {
         "id" : "10"
+      }, {
+        "id" : "30",
+        "vertices" : [ {
+          "x" : 1237,
+          "y" : 1329
+        } ]
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
       }, {
         "id" : "19"
       } ]
@@ -278,24 +402,20 @@
         "edgeSeparation" : 0,
         "vertices" : false
       },
-      "containerId" : "11",
+      "containerId" : "13",
       "externalContainerBoundariesVisible" : true,
       "elements" : [ {
-        "id" : "12",
+        "id" : "14",
         "x" : 329,
         "y" : 329
-      }, {
-        "id" : "13",
-        "x" : 329,
-        "y" : 929
       }, {
         "id" : "3",
         "x" : 1079,
         "y" : 929
       }, {
-        "id" : "14",
+        "id" : "15",
         "x" : 329,
-        "y" : 1529
+        "y" : 929
       }, {
         "id" : "4",
         "x" : 1829,
@@ -304,21 +424,83 @@
         "id" : "5",
         "x" : 2579,
         "y" : 929
+      }, {
+        "id" : "16",
+        "x" : 329,
+        "y" : 1529
       } ],
       "relationships" : [ {
         "id" : "18"
       }, {
-        "id" : "16"
+        "id" : "17"
       }, {
-        "id" : "15"
+        "id" : "24"
       }, {
-        "id" : "22"
-      }, {
-        "id" : "20",
+        "id" : "22",
         "vertices" : [ {
           "x" : 2429,
           "y" : 929
         } ]
+      }, {
+        "id" : "20"
+      } ]
+    }, {
+      "key" : "Estimator",
+      "order" : 4,
+      "paperSize" : "A4_Landscape",
+      "dimensions" : {
+        "width" : 3254,
+        "height" : 2158
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "containerId" : "25",
+      "externalContainerBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "26",
+        "x" : 287,
+        "y" : 292
+      }, {
+        "id" : "4",
+        "x" : 1037,
+        "y" : 892
+      }, {
+        "id" : "27",
+        "x" : 287,
+        "y" : 892
+      }, {
+        "id" : "6",
+        "x" : 1787,
+        "y" : 892
+      }, {
+        "id" : "28",
+        "x" : 287,
+        "y" : 1492
+      }, {
+        "id" : "8",
+        "x" : 2537,
+        "y" : 892
+      } ],
+      "relationships" : [ {
+        "id" : "29"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "32",
+        "vertices" : [ {
+          "x" : 2387,
+          "y" : 892
+        } ]
+      }, {
+        "id" : "31"
       } ]
     } ],
     "configuration" : {
@@ -331,7 +513,7 @@
       },
       "themes" : [ "https://static.structurizr.com/themes/amazon-web-services-2023.01.31/theme.json" ],
       "terminology" : { },
-      "lastSavedView" : "Validator"
+      "lastSavedView" : "Cloudier"
     }
   }
 }

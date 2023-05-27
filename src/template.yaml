@@ -68,7 +68,6 @@ Resources:
               Model: GatewayRequestModel
               Required: true
               ValidateBody: true
-
   ValidatorFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -90,7 +89,25 @@ Resources:
           Properties:
             Queue: !GetAtt ValidationQueue.Arn
             BatchSize: 1
-
+  EstimatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: estimator/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          SNS_ESTIMATED_SHIPMENT_TOPIC_ARN: !Ref EstimatedShipmentNotification
+          SNS_INVALID_SHIPMENT_NOTIFICATION: !Ref InvalidShipmentNotification
+      Policies:
+        - SQSPollerPolicy:
+            QueueName: !GetAtt ValidShipmentsQueue.QueueName
+      Events:
+        EstimatorSQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt ValidShipmentsQueue.Arn
+            BatchSize: 1
   ValidationQueue:
     Type: AWS::SQS::Queue
     Properties:
@@ -101,6 +118,12 @@ Resources:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: ValidShipmentsQueue.fifo
+      FifoQueue: true
+      ContentBasedDeduplication: true
+  EstimatedShipmentsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: EstimatedShipmentsQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
   InvalidShipmentNotification:
@@ -118,6 +141,16 @@ Resources:
       Subscription:
         - Endpoint: !GetAtt ValidShipmentsQueue.Arn
           Protocol: SQS
+  EstimatedShipmentNotification:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: EstimatedShipmentNotification.fifo
+      FifoTopic: true
+      ContentBasedDeduplication: true
+      Subscription:
+        - Endpoint: !GetAtt EstimatedShipmentsQueue.Arn
+          Protocol: SQS
+
 
 
   ApplicationResourceGroup:
