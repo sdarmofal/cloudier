@@ -35,9 +35,21 @@ def process_record(record: dict):
     if not valid_shipments:
         notify_about_invalid_shipment(shipment)
 
+    notify_about_valid_shipments(valid_shipments)
+
+
+def notify_about_valid_shipments(valid_shipments: list[ValidShipment]):
+    sns_topic_arn = os.environ["SNS_VALID_SHIPMENT_TOPIC_ARN"]
+
+    sns_client.publish(
+        TopicArn=sns_topic_arn,
+        Message=ujson.dumps(valid_shipments),
+        Subject="Valid shipments",
+    )
+
 
 def notify_about_invalid_shipment(shipment: dict):
-    sns_topic_arn = os.environ["SNS_TOPIC_ARN"]
+    sns_topic_arn = os.environ["SNS_EMAIL_TOPIC_ARN"]
 
     sns_client.publish(
         TopicArn=sns_topic_arn,

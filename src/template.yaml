@@ -77,12 +77,13 @@ Resources:
       Runtime: python3.10
       Environment:
         Variables:
-          SNS_TOPIC_ARN: !Ref ShipmentEmailNotification
+          SNS_EMAIL_TOPIC_ARN: !Ref InvalidShipmentNotification
+          SNS_VALID_SHIPMENT_TOPIC_ARN: !Ref ValidShipmentNotification
       Policies:
         - SQSPollerPolicy:
             QueueName: !GetAtt ValidationQueue.QueueName
         - SNSPublishMessagePolicy:
-            TopicName: !GetAtt ShipmentEmailNotification.TopicName
+            TopicName: !GetAtt InvalidShipmentNotification.TopicName
       Events:
         ValidatorSQSEvent:
           Type: SQS
@@ -96,13 +97,27 @@ Resources:
       QueueName: ValidationQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
-  ShipmentEmailNotification:
+  ValidShipmentsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ValidShipmentsQueue.fifo
+      FifoQueue: true
+      ContentBasedDeduplication: true
+  InvalidShipmentNotification:
     Type: AWS::SNS::Topic
     Properties:
-      TopicName: ShipmentEmailNotification
+      TopicName: InvalidShipmentNotification
       Subscription:
         - Endpoint: '{{resolve:secretsmanager:ShimpentNotificationEmail:SecretString:ShipmentNotificationEmail}}'
           Protocol: email
+  ValidShipmentNotification:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ValidShipmentNotification.fifo
+      FifoTopic: true
+      Subscription:
+        - Endpoint: !GetAtt ValidShipmentsQueue.Arn
+          Protocol: SQS
 
 
   ApplicationResourceGroup:

@@ -3,21 +3,30 @@ workspace {
     model {
         user = person "User"
         cloudier = softwareSystem "Cloudier" {
-            sqs = container "SQS" "" "" "Amazon Web Services - Simple Queue Service	"
-            snsEmail = container "SNS Email" "" "" "Amazon Web Services - Simple Notification Service Email Notification"
+            validationQueue = container "Validation Queue" "" "SQS" "Amazon Web Services - Simple Queue Service	"
+            invalidShipmentNotification = container "InvalidShipmentNotification" "" "SNS" "Amazon Web Services - Simple Notification Service Topic"
+            validShipmentNotification = container "ValidShipmentNotification" "" "SNS" "Amazon Web Services - Simple Notification Service Topic"
+            validShipmentsQueue = container "ValidShipmentsQueue" "" "SQS" "Amazon Web Services - Simple Queue Service"
 
-            gateway = container "Gateway" "" "" "Amazon Web Services - AWS Lambda Lambda Function" {
+            gateway = container "Gateway" "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
                 -> user "Send shipment data"
-                -> sqs "Queue shipment for further operations"
+                -> validationQueue "Queue shipment for further operations"
             }
 
-            validator = container "Validator" "" "" "Amazon Web Services - AWS Lambda Lambda Function" {
-                -> sqs "Get shipment data from queue"
-                -> snsEmail "Notify about invalid shipment"
+            validator = container "Validator" "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
+                lambdaHandler = component "Lambda handler" "" "" ""
+                validatorComponent = component "Validator" "" "Python" "Python"
+                dhlValidatorComponent = component "Validate DHL shipment" "" "" ""
+
+                lambdaHandler -> validatorComponent "Validate shipment"
+                lambdaHandler -> validationQueue "Get shipment data from queue"
+                lambdaHandler -> invalidShipmentNotification "Notify about invalid shipment"
+                lambdaHandler -> validShipmentNotification "Notify about valid shipment"
+                validatorComponent -> dhlValidatorComponent "Validate shipment using DHL specification"
             }
         }
 
-        user -> cloudier "Uses"
+        user -> cloudier "Order shipment"
     }
 
     views {
@@ -27,6 +36,11 @@ workspace {
         }
 
         container cloudier "Cloudier" {
+            include *
+            autoLayout
+        }
+
+        component validator "Validator" {
             include *
             autoLayout
         }
