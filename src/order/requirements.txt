@@ -1,0 +1,3 @@
+boto3
+ujson
+psycopg2-binary

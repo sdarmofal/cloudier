@@ -22,6 +22,8 @@ Resources:
           $schema: "http://json-schema.org/draft-04/schema#"
           type: object
           properties:
+            should_fail:
+              type: boolean
             weight:
               type: number
               minimum: 1
@@ -82,6 +84,8 @@ Resources:
             QueueName: !GetAtt ValidationQueue.QueueName
         - SNSPublishMessagePolicy:
             TopicName: !GetAtt InvalidShipmentNotification.TopicName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt ValidShipmentNotification.TopicName
       Events:
         ValidatorSQSEvent:
           Type: SQS
@@ -101,6 +105,10 @@ Resources:
       Policies:
         - SQSPollerPolicy:
             QueueName: !GetAtt ValidShipmentsQueue.QueueName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt EstimatedShipmentNotification.TopicName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt InvalidShipmentNotification.TopicName
       Events:
         EstimatorSQSEvent:
           Type: SQS
@@ -116,6 +124,27 @@ Resources:
       RedrivePolicy:
         deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
         maxReceiveCount: 3
+  OrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: order/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          RDS_HOST: '{{resolve:secretsmanager:cloudier-database:SecretString:host}}'
+          RDS_USERNAME: '{{resolve:secretsmanager:cloudier-database:SecretString:username}}'
+          RDS_PASSWORD: '{{resolve:secretsmanager:cloudier-database:SecretString:password}}'
+          RDS_PORT: '{{resolve:secretsmanager:cloudier-database:SecretString:port}}'
+      Policies:
+        - SQSPollerPolicy:
+            QueueName: !GetAtt EstimatedShipmentsQueue.QueueName
+      Events:
+        EstimatedShipmentSQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt EstimatedShipmentsQueue.Arn
+            BatchSize: 1
   DeadLetterFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -148,7 +177,6 @@ Resources:
     Properties:
       QueueName: ValidShipmentsQueue.fifo
       FifoQueue: true
-      ContentBasedDeduplication: true
       RedrivePolicy:
         deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
         maxReceiveCount: 3

@@ -18,21 +18,26 @@ def lambda_handler(event: dict, context: object) -> bool:
 
 
 def process_record(record: dict, source: str):
-    event_body = ujson.loads(record["body"])
+    event_body = ujson.loads(record["body"])["Message"]
+    event_body = ujson.loads(event_body)
 
-    shipment = {
-        "weight": event_body["weight"],
-        "length": event_body["length"],
-        "width": event_body["width"],
-        "height": event_body["height"],
-        "is_sortable": event_body["is_sortable"],
-    }
+    valid_shipments = [
+        {
+            "carrier": valid_shipment["carrier"],
+            "weight": valid_shipment["weight"],
+            "length": valid_shipment["length"],
+            "width": valid_shipment["width"],
+            "height": valid_shipment["height"],
+            "is_sortable": valid_shipment["is_sortable"],
+        }
+        for valid_shipment in event_body
+    ]
 
     try:
-        carrier, estimated_shipment = Estimator(**shipment).estimate()
+        carrier, estimated_shipment = Estimator(valid_shipments).estimate()
     except EstimationError as exception:
-        notify_about_not_estimatable_shipment(shipment, source)
-        app_logger.error(f"Cannot estimate shipment for {shipment}", exc_info=exception)
+        notify_about_not_estimatable_shipment(valid_shipments, source)
+        app_logger.error(f"Cannot estimate shipment", exc_info=exception)
         return
 
     notify_about_estimated_shipments(carrier, estimated_shipment, source)
@@ -60,11 +65,11 @@ def notify_about_estimated_shipments(
     )
 
 
-def notify_about_not_estimatable_shipment(shipment: dict, source: str):
+def notify_about_not_estimatable_shipment(shipments: list[dict], source: str):
     sns_topic_arn = os.environ["SNS_INVALID_SHIPMENT_NOTIFICATION"]
 
     sns_client.publish(
         TopicArn=sns_topic_arn,
-        Message=f"Shipment with following parameters is invalid and cannot be estimated: {shipment}. Source: {source}",
+        Message=f"Shipments with following parameters are invalid and cannot be estimated: {shipments}. Source: {source}",
         Subject="Invalid shipment",
     )

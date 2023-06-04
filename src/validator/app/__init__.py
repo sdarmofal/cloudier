@@ -1,4 +1,5 @@
 import os
+import uuid
 
 import boto3
 import ujson
@@ -10,15 +11,15 @@ sns_client = boto3.client("sns")
 
 def lambda_handler(event: dict, context: object) -> bool:
     for record in event["Records"]:
-        process_record(record)
+        process_record(record, context.aws_request_id)
 
     return True
 
 
-def process_record(record: dict):
+def process_record(record: dict, source: uuid.UUID):
     event_body = ujson.loads(record["body"])
 
-    if event_body.get("should_fail"):
+    if event_body.get("should_fail", False):  # For testing purposes
         raise Exception("Should fail")
 
     shipment = {
@@ -38,16 +39,20 @@ def process_record(record: dict):
     if not valid_shipments:
         notify_about_invalid_shipment(shipment)
 
-    notify_about_valid_shipments(valid_shipments)
+    notify_about_valid_shipments(valid_shipments, source)
 
 
-def notify_about_valid_shipments(valid_shipments: list[ValidShipment]):
+def notify_about_valid_shipments(
+    valid_shipments: list[ValidShipment], source: uuid.UUID
+):
     sns_topic_arn = os.environ["SNS_VALID_SHIPMENT_TOPIC_ARN"]
 
     sns_client.publish(
         TopicArn=sns_topic_arn,
         Message=ujson.dumps(valid_shipments),
         Subject="Valid shipments",
+        MessageGroupId="default",
+        MessageDeduplicationId=str(source),
     )
 
 

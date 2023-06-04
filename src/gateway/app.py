@@ -17,6 +17,7 @@ def lambda_handler(event: dict, context: object) -> dict:
             "length": event_body["length"],
             "width": event_body["width"],
             "height": event_body["height"],
+            "should_fail": event_body.get("should_fail", False),
         }
     except KeyError:
         return {"statusCode": 400, "body": "Invalid request"}

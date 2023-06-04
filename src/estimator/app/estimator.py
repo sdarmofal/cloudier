@@ -16,21 +16,21 @@ class CARRIER(str, Enum):
 class Estimator:
     ESTIMATORS = {CARRIER.DHL: DhlEstimator}
 
-    def __init__(
-        self, weight: float, length: float, width: float, height: float, is_sortable
-    ):
-        self.weight = weight
-        self.length = length
-        self.width = width
-        self.height = height
-        self.is_sortable = is_sortable
+    def __init__(self, valid_shipments: list[dict]):
+        self.valid_shipments = valid_shipments
 
     def estimate(self) -> tuple[CARRIER, EstimatedShipment]:
         estimated_shipments: list[tuple[CARRIER, EstimatedShipment]] = []
-        for carrier, estimator in self.ESTIMATORS.items():
+        for valid_shipment in self.valid_shipments:
+            carrier: CARRIER = CARRIER[valid_shipment["carrier"]]
             try:
+                estimator = self.ESTIMATORS[carrier]
                 estimated_shipment = estimator(
-                    self.weight, self.length, self.width, self.height, self.is_sortable
+                    valid_shipment["weight"],
+                    valid_shipment["length"],
+                    valid_shipment["width"],
+                    valid_shipment["height"],
+                    valid_shipment["is_sortable"],
                 ).estimate()
                 estimated_shipments.append((carrier, estimated_shipment))
             except ValueError as exception:
