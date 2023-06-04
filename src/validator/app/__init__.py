@@ -3,7 +3,7 @@ import os
 import boto3
 import ujson
 
-from .validator import Validator
+from .validator import Validator, ValidShipment
 
 sns_client = boto3.client("sns")
 
@@ -17,6 +17,9 @@ def lambda_handler(event: dict, context: object) -> bool:
 
 def process_record(record: dict):
     event_body = ujson.loads(record["body"])
+
+    if event_body.get("should_fail"):
+        raise Exception("Should fail")
 
     shipment = {
         "weight": event_body["weight"],

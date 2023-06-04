@@ -44,7 +44,6 @@ Resources:
             - width
             - height
 
-
   GatewayFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -114,18 +113,54 @@ Resources:
       QueueName: ValidationQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 3
+  DeadLetterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dead_letter_processor/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          SNS_ARN: !Ref InvalidShipmentNotification
+      Policies:
+        - SQSPollerPolicy:
+            QueueName: !GetAtt DeadLetterQueue.QueueName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt InvalidShipmentNotification.TopicName
+      Events:
+        DeadLetterSQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DeadLetterQueue.Arn
+            BatchSize: 1
+
+  DeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: CloudierDeadLetterQueue.fifo
+      FifoQueue: true
+      ContentBasedDeduplication: true
   ValidShipmentsQueue:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: ValidShipmentsQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 3
   EstimatedShipmentsQueue:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: EstimatedShipmentsQueue.fifo
       FifoQueue: true
       ContentBasedDeduplication: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 3
   InvalidShipmentNotification:
     Type: AWS::SNS::Topic
     Properties:
