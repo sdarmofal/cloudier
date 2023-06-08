@@ -13,7 +13,8 @@ def lambda_handler(event: dict, context: object) -> bool:
 
 
 def process_record(record: dict, source: uuid.UUID):
-    event_body = ujson.loads(record["body"])
+    event_body = ujson.loads(record["body"])["Message"]
+    event_body = ujson.loads(event_body)
 
     shipment = {
         "carrier": event_body["carrier"],
@@ -21,6 +22,7 @@ def process_record(record: dict, source: uuid.UUID):
         "length": event_body["length"],
         "width": event_body["width"],
         "height": event_body["height"],
+        "is_sortable": event_body["is_sortable"],
         "price": {
             "amount": event_body["price"]["amount"],
             "currency": event_body["price"]["currency"],
@@ -44,14 +46,16 @@ def persist_order(shipment: dict, source_id: uuid):
 
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO orders (carrier, weight, length, width, height, price, source_id) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+        "INSERT INTO orders (carrier, weight, length, width, height, is_sortable, price, currency, source) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
         (
             shipment["carrier"],
             shipment["weight"],
             shipment["length"],
             shipment["width"],
             shipment["height"],
-            shipment["price"],
+            shipment["is_sortable"],
+            shipment["price"]["amount"],
+            shipment["price"]["currency"],
             source_id,
         ),
     )

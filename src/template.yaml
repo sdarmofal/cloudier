@@ -106,9 +106,9 @@ Resources:
         - SQSPollerPolicy:
             QueueName: !GetAtt ValidShipmentsQueue.QueueName
         - SNSPublishMessagePolicy:
-            TopicName: !GetAtt EstimatedShipmentNotification.TopicName
-        - SNSPublishMessagePolicy:
             TopicName: !GetAtt InvalidShipmentNotification.TopicName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt EstimatedShipmentNotification.TopicName
       Events:
         EstimatorSQSEvent:
           Type: SQS
@@ -139,12 +139,36 @@ Resources:
       Policies:
         - SQSPollerPolicy:
             QueueName: !GetAtt EstimatedShipmentsQueue.QueueName
+        - AWSLambdaVPCAccessExecutionRole
+        - AWSLambdaSQSQueueExecutionRole
       Events:
         EstimatedShipmentSQSEvent:
           Type: SQS
           Properties:
             Queue: !GetAtt EstimatedShipmentsQueue.Arn
             BatchSize: 1
+  ReportFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: reports/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          RDS_HOST: '{{resolve:secretsmanager:cloudier-database:SecretString:host}}'
+          RDS_USERNAME: '{{resolve:secretsmanager:cloudier-database:SecretString:username}}'
+          RDS_PASSWORD: '{{resolve:secretsmanager:cloudier-database:SecretString:password}}'
+          RDS_PORT: '{{resolve:secretsmanager:cloudier-database:SecretString:port}}'
+      Policies:
+        - AWSLambdaVPCAccessExecutionRole
+        - AWSLambdaSQSQueueExecutionRole
+      Events:
+        Gateway:
+          Type: Api
+          Properties:
+            RestApiId: !Ref CloudierApi
+            Path: /report
+            Method: get
   DeadLetterFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -236,9 +260,6 @@ Outputs:
   CloudierApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
     Value: !Sub "https://${CloudierApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/gateway/"
-  GatewayFunction:
-    Description: Cloudier gateway
-    Value: !GetAtt GatewayFunction.Arn
   GatewayFunctionIamRole:
     Description: Implicit IAM Role created for Gateway function
     Value: !GetAtt GatewayFunctionRole.Arn
