@@ -3,12 +3,21 @@ workspace {
     model {
         user = person "User"
         cloudier = softwareSystem "Cloudier" {
-            validationQueue = container "Validation Queue" "" "SQS" "Amazon Web Services - Simple Queue Service	"
+            deadLetterQueue =  container "DeadLetterQueue" "" "SQS" "Amazon Web Services - Simple Queue Service"
+            validationQueue = container "Validation Queue" "" "SQS" "Amazon Web Services - Simple Queue Service	" {
+                -> deadLetterQueue "Queue invalid event"
+            }
             invalidShipmentNotification = container "InvalidShipmentNotification" "" "SNS" "Amazon Web Services - Simple Notification Service Topic"
             validShipmentNotification = container "ValidShipmentNotification" "" "SNS" "Amazon Web Services - Simple Notification Service Topic"
-            validShipmentsQueue = container "ValidShipmentsQueue" "" "SQS" "Amazon Web Services - Simple Queue Service"
-            estimatedShipmentsQueue = container "EstimatedShipmentsQueue" "" "SQS" "Amazon Web Services - Simple Queue Service"
+            validShipmentsQueue = container "ValidShipmentsQueue" "" "SQS" "Amazon Web Services - Simple Queue Service" {
+                -> deadLetterQueue "Queue invalid event"
+            }
+            estimatedShipmentsQueue = container "EstimatedShipmentsQueue" "" "SQS" "Amazon Web Services - Simple Queue Service" {
+                -> deadLetterQueue "Queue invalid event"
+            }
             estimatedShipmentNotification = container "EstimatedShipmentNotification" "" "SNS" "Amazon Web Services - Simple Notification Service Topic"
+            rds = container "RDS" "" "RDS" "Amazon Web Services - Aurora PostgreSQL Instance"
+
 
             gateway = container "Gateway" "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
                 -> user "Send shipment data"
@@ -38,6 +47,21 @@ workspace {
                 estimatorLambdaHandler -> invalidShipmentNotification "Notify about invalid shipment"
                 estimatorComponent -> dhlEstimatorComponent "Estimate shipment using DHL specification"
             }
+
+            deadLetterProcessor = container "Dead letter processor "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
+                -> deadLetterQueue "Get not processable events"
+                -> invalidShipmentNotification "Notify about not processable shipment"
+            }
+
+            order = container "Order" "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
+                -> estimatedShipmentsQueue "Get estimated shipment data from queue"
+                -> rds "Persist ordered shipment"
+            }
+
+            reports =  container "Reports" "" "Lambda" "Amazon Web Services - AWS Lambda Lambda Function" {
+                -> user "Get price report"
+                -> rds "Get data for the report"
+            }
         }
 
         user -> cloudier "Order shipment"
@@ -53,7 +77,7 @@ workspace {
 
         container cloudier "Cloudier" {
             include *
-            autoLayout
+            autoLayout lr
         }
 
         component validator "Validator" {
