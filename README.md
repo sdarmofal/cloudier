@@ -151,7 +151,12 @@ property of the Lambda function:
 
 ### Disabling API Gateway
 
+<<<<<<< HEAD
+The API Gateway is not able to be disabled. Because of it, it can be accessible by others and may generate cost.
+The solution is to open tha API Gateway in the AWS console and delete it.
+=======
 The API Gateway is not able to be disabled. The solution is to open tha API Gateway in the AWS console and delete it.
+>>>>>>> origin/main
 
 ### Input data validation
 
