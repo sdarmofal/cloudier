@@ -151,17 +151,23 @@ property of the Lambda function:
 
 ### Disabling API Gateway
 
-<<<<<<< HEAD
 The API Gateway is not able to be disabled. Because of it, it can be accessible by others and may generate cost.
 The solution is to open tha API Gateway in the AWS console and delete it.
-=======
+
 The API Gateway is not able to be disabled. The solution is to open tha API Gateway in the AWS console and delete it.
->>>>>>> origin/main
 
 ### Input data validation
 
 The input data can be validated in two ways:
 
 1. In the Lambda function - the god way to deal with business validation
-2. In the API Gateway (Models) - the good way to deal with schema validation 
+2. In the API Gateway (Models) - the good way to deal with schema validation
+
+### SQS pricing notice
+
+SQS pricing is based on the number of requests made to SQS. The first 1 million requests per month are free.
+
+If you're using SQS queue as an event for lambda function, then you will be charged for each request. Be careful, because
+the lambda function pools the queue every 1 minute. Because of it, you will be charged for each (empty) request when 
+application is not used.
 
